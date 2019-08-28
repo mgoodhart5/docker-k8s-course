@@ -11,17 +11,8 @@ references:
       command: docker run mg/docker-k8s-course npm run test -- --coverage
 
 jobs:
-  build_dev:
+  docker:
+    - image: circleci/node
     steps:
       - *build_docker_image
-  tests:
-    steps:
       - *run_test_suite
-
-workflows:
-  version: 2
-  build:
-    jobs:
-      - build_dev
-      - tests:
-          requires: ["build_dev"]
