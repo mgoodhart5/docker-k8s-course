@@ -17,5 +17,5 @@ jobs:
       steps:
         - checkout
         - run:
-          name: Build my personal docker image
-          command: *build_docker_image
+            name: Build my personal docker image
+            command: *build_docker_image
