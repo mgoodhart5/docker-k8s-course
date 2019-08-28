@@ -12,7 +12,7 @@ references:
 
 jobs:
   docker:
-    - image: circleci/node
+    image: circleci/node
     steps:
       - *build_docker_image
       - *run_test_suite
