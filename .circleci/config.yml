@@ -14,8 +14,8 @@ jobs:
   build:
     docker:
       image: circleci/node
-      steps:
-        - checkout
-        - run:
-            name: Build my personal docker image
-            command: *build_docker_image
+    steps:
+      - checkout
+      - run:
+          name: Build my personal docker image
+          command: *build_docker_image
