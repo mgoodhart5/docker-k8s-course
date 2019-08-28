@@ -23,5 +23,5 @@ workflows:
   build:
     jobs:
       - build_dev
-      - tests
+      - tests:
           requires: ["build_dev"]
