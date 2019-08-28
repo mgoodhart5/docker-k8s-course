@@ -11,8 +11,11 @@ references:
       command: docker run mg/docker-k8s-course npm run test -- --coverage
 
 jobs:
-  docker:
-    image: circleci/node
-    steps:
-      - *build_docker_image
-      - *run_test_suite
+  build:
+    docker:
+      image: circleci/node
+      steps:
+        - checkout
+        -run:
+          name: Build my personal docker image
+          command: *build_docker_image
