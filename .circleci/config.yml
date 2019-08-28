@@ -9,6 +9,6 @@ jobs:
       - run:
           name: Build my personal docker image
           command: docker build -t mg/docker-k8s-course -f Dockerfile.dev .
-      - run
+      - run:
           name: Run tests
           command: docker run mg/docker-k8s-course npm run test -- --coverage
