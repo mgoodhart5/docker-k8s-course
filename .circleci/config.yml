@@ -1,14 +1,4 @@
 version: 2
-references:
-  build_docker_image: &build_docker_image
-    run:
-      name: Build docker image
-      command: docker build -t mg/docker-k8s-course -f Dockerfile.dev .
-
-  run_test_suite: &run_test_suite
-    run:
-      name: Run tests
-      command: docker run mg/docker-k8s-course npm run test -- --coverage
 
 jobs:
   build:
@@ -18,4 +8,7 @@ jobs:
       - checkout
       - run:
           name: Build my personal docker image
-          command: *build_docker_image
+          command: docker build -t mg/docker-k8s-course -f Dockerfile.dev .
+      - run
+          name: Run tests
+          command: docker run mg/docker-k8s-course npm run test -- --coverage
